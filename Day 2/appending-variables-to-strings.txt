@@ -1,0 +1,5 @@
+// Change code below this line
+
+var someAdjective = "[a string of at least 3 characters]";
+var myStr = "Learning to code is ";
+myStr += someAdjective;
