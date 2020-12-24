@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - 838710 - Survey Form</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+<body>
+    <h1 id="title">[Generic Survey Name]</h1>
+    <p id="description">This is a generic description for this generic survey.</p>
+    <form id="survey-form" action="">
+      <label for="name" id="name-label">Name:</label>
+      <input id="name" type="text" placeholder="Please enter your name here..." required>
+      <label for="email" id="email-label">E-mail:</label>
+      <input id="email" type="email" placeholder="Please enter your e-mail here..." required>
+      <label for="number" id="number-label">Age:</label>
+      <input id="number" type="number" placeholder="Please enter your age here..." min="13" max="99" required>
+      <label for="dropdown" id="dropdown-label">Dropdown Menu:</label>
+      <select id="dropdown" type="dropdown" required>
+        <option value="" disabled selected>Select an option...</option>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+        <option value="option4">Option 4</option>
+      </select>
+      
+      <br><label for="">Yes or No?</label><br>
+      <label for="yes" id="yes-label"><input id="yes" type="radio" name="radio-buttons" value="yes"> Yes</label><br>
+    <label for="no" id="no-label"><input id="no" type="radio" name="radio-buttons" value="no"> No</label><br>
+      
+      <br><label for="">Please select all that apply.</label><br>
+      <label for="option1" id="option1-label"><input id="option1" type="checkbox" value="option1"> Option1</label><br>
+      <label for="option2" id="option2-label"><input id="option2" type="checkbox" value="option2"> Option2</label><br>
+      <label for="option3" id="option3-label"><input id="option3" type="checkbox" value="option3"> Option3</label><br>
+      <label for="option4" id="option4-label"><input id="option4" type="checkbox" value="option4"> Option4</label><br>
+      <label for="option5" id="option5-label"><input id="option5" type="checkbox" value="option5"> Option5</label><br><br>
+      
+      <label for="remarks" id="remarks-label">Remarks?</label>
+      <textarea id="remarks" placeholder="Please enter any remarks you have..." rows="4"></textarea>
+        <button type="Submit" id="submit">Submit Form</button>
+    </form>
+</body>
+<!-- partial -->
+  
+</body>
+</html>
