@@ -1,0 +1,4 @@
+let dog = {
+    name: "String",
+    numLegs: 4
+};
