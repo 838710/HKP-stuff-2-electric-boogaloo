@@ -104,6 +104,7 @@ nav:hover{
     height: auto;
 }
 .row img {
+    width: 225%;
     transition: all 1s ease;
 }
 .row:hover{

@@ -6,6 +6,7 @@
         <style>
             .slide{
                 display: none;
+                opacity: 0%;
             }
             #button{
                 width: 3em;
@@ -22,6 +23,15 @@
             }
             #button:hover{
                 background-color: #006eff;
+            }
+            @keyframes unfade {
+                0%{opacity: 0%;}
+                100%{opacity: 100%;}
+            }
+            
+            @keyframes fade {
+                0%{opacity: 100%;}
+                100%{opacity: 0%;}
             }
         </style>
     </head>
@@ -62,30 +72,32 @@
                 </div>
             </div>
             <script>
-                var num = 1;
-                showslide(num);
-                function showslide(n) {
-                    var i;
-                    var slides = document.getElementsByClassName("slide");
-                    for(i = 0; i < slides.length; i++){
-                        slides[i].style.display = "none";
-                    }
-                    slides[n-1].style.display = "block";
+                var cur = 0;
+                var slides = document.getElementsByClassName("slide");
+                showSlide(cur);
+                function showSlide(num){
+                    slides[num].style.display = "block";
+                    slides[num].style.animation = "unfade 1s forwards";
                 }
-                function check(){
-                    var slides = document.getElementsByClassName("slide");
-                    if(num < 1) {num = slides.length;}
-                    if(num > slides.length) {num = 1}
+                function hideSlide(num){
+                    slides[num].style.animation = "fade 1s forwards";
+                    setTimeout(function(){clear(num);}, 1000);
+                }
+                function clear(num){
+                    slides[num].style.display = "none";
+                }
+                function check(num){
+                    return (num+8)%8;
                 }
                 function back(){
-                    num--;
-                    check()
-                    showslide(num);
+                    hideSlide(cur);
+                    cur = check(cur-1);
+                    setTimeout(function(){showSlide(cur);}, 1000);
                 }
                 function next(){
-                    num++;
-                    check()
-                    showslide(num);
+                    hideSlide(cur);
+                    cur = check(cur+1);
+                    setTimeout(function(){showSlide(cur);}, 1000);
                 }
             </script>
         </div>    
